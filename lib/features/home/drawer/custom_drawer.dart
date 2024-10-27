@@ -5,6 +5,7 @@ import 'package:iptv_app/features/home/drawer/edit_profile_screen.dart'; // Ensu
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:iptv_app/authentication/login/login.dart';
 import '../home.dart';
+import '../movies.dart';
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
 
@@ -130,6 +131,11 @@ class CustomDrawer extends StatelessWidget {
                       icon: Icons.movie,
                       title: 'Movies',
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MoviesPage()),
+                        );
+
                         // Implement navigation to Movies page
                       },
                     ),

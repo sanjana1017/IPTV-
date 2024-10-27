@@ -244,7 +244,7 @@ class _HomePageState extends State<HomePage> {
     final width = MediaQuery.of(context).size.width;
 
     if (orientation == Orientation.portrait) {
-      return width < 800 ? 2 : 3;
+      return width < 800 ? 3 : 3;
     } else {
       return width < 800 ? 4 : 6;
     }

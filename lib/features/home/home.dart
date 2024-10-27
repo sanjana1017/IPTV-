@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(MaterialApp(
+    theme: ThemeData(
+      textTheme: TextTheme(
+        bodyLarge: TextStyle(decoration: TextDecoration.none),
+        bodyMedium: TextStyle(decoration: TextDecoration.none),
+      ),
+    ),
+    home: HomePage(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,9 +28,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.black, // Ensuring the AppBar is black
         centerTitle: true,
       ),
-      body: SafeArea( // Moved SafeArea to only wrap the body
-        child: NetflixStyleBody(),
-      ),
+      body: NetflixStyleBody(), // No need to wrap with SafeArea since AppBar is already managed.
       backgroundColor: Colors.black,
     );
   }
@@ -56,6 +67,7 @@ class SectionTitle extends StatelessWidget {
           color: Colors.white,
           fontSize: 18,
           fontWeight: FontWeight.bold,
+          decoration: TextDecoration.none, // Make sure the text has no underline
         ),
       ),
     );
